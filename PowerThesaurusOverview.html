@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  
+  <meta charset="UTF-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Thesaurus Overview</title>
+
+  
+  
+  <style>
+        body {
+            text-align: center; /* Centers the table */
+        }
+        
+        table {
+            margin: 0 auto; /* Centers the table */
+            border-collapse: collapse;
+        }
+        
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left; /* Align content to the left */
+    width: auto; /* Allows column to size based on content */
+    white-space: normal; /* Ensures text wraps */
+    word-wrap: break-word; /* Prevents text overflow */
+    overflow-wrap: break-word; /* Ensures wrapping works */
+}
+
+img {
+    display: block; /* Ensures proper spacing */
+    width: auto; /* Uses image's natural width */
+    max-width: 100%; /* Prevents images from overflowing */
+    height: auto; /* Maintains aspect ratio */
+}
+ 
+        .comment {
+            font-size: 12pt;  /* Larger font size */
+            font-weight: bold; /* Bold text */
+            color: #222;       /* Darker color */
+            text-align: left;  /* Left-align comments */
+            display: block;    /* Ensures block behavior */
+            margin: 0 auto;    /* Centers the comment within the column */
+            max-width: 100%;   /* Ensures comments don't exceed column width */
+            word-wrap: break-word; /* Prevents text overflow */
+            overflow-wrap: break-word;
+        }
+    </style>
+</head><body>
+<table>
+
+  <tbody>
+    <tr>
+      <th>
+      <h1>An Overview of Power Thesaurus in 8 Steps</h1>
+      <br>
+      </th>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Image filenames in ascending order
+        const imageFilenames = [
+            "PT0001.jpg",
+            "PT0002.jpg",
+            "PT0003.jpg",
+            "PT0004.jpg",
+            "PT0005.jpg",
+            "PT0006.jpg",
+            "PT0007.jpg",
+            "PT0008.jpg"
+        ];
+
+        // Custom comments for specific images
+        const comments = {
+	    "PT0001.jpg": "1) At the Power Thesaurus site, you can enter a word in the search field and it will bring up synonyms for that word.",
+            "PT0002.jpg": "2) Here we've entered “sly,” which is one of the words from last night's fable.",
+            "PT0003.jpg": "3) Power Thesaurus then presents you with a list of synonyms for “sly.” Notice also that there on the left side of the window is a list of options.",
+            "PT0004.jpg": "4) The menu option below Synonyms is Antonyms. Click that and you will be presented with antonyms, as you see here we have a list of antonyms for “sly.”",
+            "PT0005.jpg": "5) The next option down on the left-hand menu is Definitions. Click that and you'll get definitions, as you see here for sly.",
+            "PT0006.jpg": "6) The next option down is Sentences. Click that and you'll be presented with sentences that use the word, in this example, sentences that use “sly.”",
+            "PT0007.jpg": "7) Skip a few options down and click Phrases and you'll see phrases that are synonym with “sly” or use it.",
+            "PT0008.jpg": "8) Finally, click the last option, Idioms, and you'll see idioms that have meanings similar to “sly.”"        };
+
+        // Get the table
+        const table = document.querySelector("table");
+
+        // Insert images into the table with comment rows
+        imageFilenames.forEach(filename => {
+            console.log("Loading image:", filename);  // Debugging output
+
+            // Add a blank row for spacing
+            const blankRow = document.createElement("tr");
+            const blankCell = document.createElement("td");
+            blankCell.innerHTML = "&nbsp;";
+            blankRow.appendChild(blankCell);
+            table.appendChild(blankRow);
+
+            // Create comment row
+            const commentRow = document.createElement("tr");
+            const commentCell = document.createElement("td");
+            commentCell.classList.add("comment");
+            commentCell.innerHTML = `<h4>${comments[filename] || "No comment available"}</h4>`; // Embedding in h6
+            commentRow.appendChild(commentCell);
+            table.appendChild(commentRow);
+
+            // Create image row
+            const imageRow = document.createElement("tr");
+            const imageCell = document.createElement("td");
+            const img = document.createElement("img");
+
+            img.src = filename;
+            img.alt = filename;
+            img.loading = "lazy";
+
+            imageCell.appendChild(img);
+            imageRow.appendChild(imageCell);
+            table.appendChild(imageRow);
+        });
+    });
+</script>
+</body></html>
