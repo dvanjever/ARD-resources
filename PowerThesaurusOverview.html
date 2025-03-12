@@ -97,7 +97,7 @@ table.appendChild(blankRow);
 const commentRow = document.createElement("tr");
 const commentCell = document.createElement("td");
 commentCell.classList.add("comment");
-commentCell.innerHTML = `<h4>${comments[filename] || "No comment available"}</h4>`; // Embedding in h6
+commentCell.innerHTML = `<h2>${comments[filename] || "No comment available"}</h2>`; // Embedding in h6
 commentRow.appendChild(commentCell);
 table.appendChild(commentRow);
 
